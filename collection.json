@@ -1,0 +1,618 @@
+{
+    "info": {
+        "name": "api",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "origin",
+            "value": "http://localhost:8080",
+            "type": "string"
+        },
+        {
+            "key": "username",
+            "value": "",
+            "type": "string"
+        },
+        {
+            "key": "password",
+            "value": "",
+            "type": "string"
+        }
+    ],
+    "auth": {
+        "basic": [
+            {
+                "key": "username",
+                "value": "{{username}}",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "{{password}}",
+                "type": "string"
+            }
+        ],
+        "type": "basic"
+    },
+    "item": [
+        {
+            "name": "ActivityLogsService",
+            "item": [
+                {
+                    "name": "list",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/logs?page=&per_page=",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "logs"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "",
+                                    "description": "Page number"
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "",
+                                    "description": "Items per page"
+                                }
+                            ]
+                        },
+                        "header": [],
+                        "method": "GET"
+                    },
+                    "response": [
+                        {
+                            "name": "Successful list",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/logs?page=&per_page=",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "logs"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "page",
+                                            "value": "",
+                                            "description": "Page number"
+                                        },
+                                        {
+                                            "key": "per_page",
+                                            "value": "",
+                                            "description": "Items per page"
+                                        }
+                                    ]
+                                },
+                                "header": [],
+                                "method": "GET"
+                            },
+                            "body": "{\n    \"page\": 0,\n    \"logs\": [\n        {\n            \"id\": \"example\",\n            \"text\": \"example\",\n            \"html\": \"example\",\n            \"user\": {\n                \"email\": \"example\",\n                \"name\": \"example\",\n                \"profile_image_url\": \"example\"\n            },\n            \"project\": \"example\",\n            \"environment\": \"example\",\n            \"config\": \"example\",\n            \"created_at\": \"2022-11-09T00:14:55.056Z\"\n        }\n    ]\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "retrieve",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/logs/log?log=",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "logs",
+                                "log"
+                            ],
+                            "query": [
+                                {
+                                    "key": "log",
+                                    "value": "",
+                                    "description": "Unique identifier for the log object."
+                                }
+                            ]
+                        },
+                        "header": [],
+                        "method": "GET"
+                    },
+                    "response": [
+                        {
+                            "name": "Successful retrieve",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/logs/log?log=",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "logs",
+                                        "log"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "log",
+                                            "value": "",
+                                            "description": "Unique identifier for the log object."
+                                        }
+                                    ]
+                                },
+                                "header": [],
+                                "method": "GET"
+                            },
+                            "body": "{\n    \"id\": \"example\",\n    \"text\": \"example\",\n    \"html\": \"example\",\n    \"user\": {\n        \"email\": \"example\",\n        \"name\": \"example\",\n        \"profile_image_url\": \"example\"\n    },\n    \"project\": \"example\",\n    \"environment\": \"example\",\n    \"config\": \"example\",\n    \"created_at\": \"2022-11-09T00:14:55.056Z\"\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "AuthService",
+            "item": [
+                {
+                    "name": "revoke",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/auth/revoke",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "auth",
+                                "revoke"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"token\": \"example\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Successful revoke",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/auth/revoke",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "auth",
+                                        "revoke"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"token\": \"example\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": "",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ProjectsService",
+            "item": [
+                {
+                    "name": "list",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/projects?page=&per_page=",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "projects"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "",
+                                    "description": "Page number"
+                                },
+                                {
+                                    "key": "per_page",
+                                    "value": "",
+                                    "description": "Items per page"
+                                }
+                            ]
+                        },
+                        "header": [],
+                        "method": "GET"
+                    },
+                    "response": [
+                        {
+                            "name": "Successful list",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/projects?page=&per_page=",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "projects"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "page",
+                                            "value": "",
+                                            "description": "Page number"
+                                        },
+                                        {
+                                            "key": "per_page",
+                                            "value": "",
+                                            "description": "Items per page"
+                                        }
+                                    ]
+                                },
+                                "header": [],
+                                "method": "GET"
+                            },
+                            "body": "{\n    \"page\": 0,\n    \"projects\": [\n        {\n            \"id\": \"example\",\n            \"name\": \"example\",\n            \"description\": \"example\",\n            \"created_at\": \"2022-11-09T00:14:55.057Z\"\n        }\n    ]\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "create",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/projects",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "projects"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Successful create",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/projects",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "projects"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": "{\n    \"id\": \"example\",\n    \"name\": \"example\",\n    \"description\": \"example\",\n    \"created_at\": \"2022-11-09T00:14:55.057Z\"\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "retrieve",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/projects/project?project=",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "projects",
+                                "project"
+                            ],
+                            "query": [
+                                {
+                                    "key": "project",
+                                    "value": "",
+                                    "description": "Unique identifier for the project object."
+                                }
+                            ]
+                        },
+                        "header": [],
+                        "method": "GET"
+                    },
+                    "response": [
+                        {
+                            "name": "Successful retrieve",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/projects/project?project=",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "projects",
+                                        "project"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "project",
+                                            "value": "",
+                                            "description": "Unique identifier for the project object."
+                                        }
+                                    ]
+                                },
+                                "header": [],
+                                "method": "GET"
+                            },
+                            "body": "{\n    \"id\": \"example\",\n    \"name\": \"example\",\n    \"description\": \"example\",\n    \"created_at\": \"2022-11-09T00:14:55.058Z\"\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "update",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/projects/project",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "projects",
+                                "project"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"project\": \"example\",\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Successful update",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/projects/project",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "projects",
+                                        "project"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"project\": \"example\",\n    \"name\": \"example\",\n    \"description\": \"example\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": "{\n    \"id\": \"example\",\n    \"name\": \"example\",\n    \"description\": \"example\",\n    \"created_at\": \"2022-11-09T00:14:55.058Z\"\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/projects/project",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "projects",
+                                "project"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "DELETE",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"project\": \"example\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Successful delete",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/projects/project",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "projects",
+                                        "project"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "DELETE",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"project\": \"example\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": "",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "WorkplaceService",
+            "item": [
+                {
+                    "name": "retrieve",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/workplace",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "workplace"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "GET"
+                    },
+                    "response": [
+                        {
+                            "name": "Successful retrieve",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/workplace",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "workplace"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "GET"
+                            },
+                            "body": "{\n    \"name\": \"example\",\n    \"billing_email\": \"example\"\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                },
+                {
+                    "name": "update",
+                    "request": {
+                        "url": {
+                            "raw": "{{origin}}/workplace",
+                            "host": [
+                                "{{origin}}"
+                            ],
+                            "path": [
+                                "workplace"
+                            ],
+                            "query": []
+                        },
+                        "header": [],
+                        "method": "POST",
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"example\",\n    \"billing_email\": \"example\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Successful update",
+                            "code": 200,
+                            "originalRequest": {
+                                "url": {
+                                    "raw": "{{origin}}/workplace",
+                                    "host": [
+                                        "{{origin}}"
+                                    ],
+                                    "path": [
+                                        "workplace"
+                                    ],
+                                    "query": []
+                                },
+                                "header": [],
+                                "method": "POST",
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"example\",\n    \"billing_email\": \"example\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                }
+                            },
+                            "body": "{\n    \"name\": \"example\",\n    \"billing_email\": \"example\"\n}",
+                            "_postman_previewlanguage": "json"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
